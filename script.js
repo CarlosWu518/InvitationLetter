@@ -1,7 +1,7 @@
 /* ===== 配置区（直接修改即可） ===== */
 const CONFIG = {
     // 订婚日期（年, 月-1, 日, 时, 分）
-    weddingDate: new Date(2026, 5, 6, 12, 18),
+    weddingDate: new Date(2026, 4, 11, 12, 18),
     // 地址（用于复制）
     fullAddress: '请填写完整地址 · 大酒店 · X 楼 X 厅'
 };
