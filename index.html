@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#c9354c">
+    <title>订婚请帖</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 花瓣飘落 -->
+    <div class="petals" id="petals"></div>
+
+    <!-- 封面 - 信封 -->
+    <section class="cover" id="cover">
+        <div class="envelope">
+            <div class="envelope-back"></div>
+            <div class="envelope-letter">
+                <div class="letter-inner">
+                    <div class="letter-corner top-left"></div>
+                    <div class="letter-corner top-right"></div>
+                    <div class="letter-corner bottom-left"></div>
+                    <div class="letter-corner bottom-right"></div>
+                    <div class="letter-title">敬 启</div>
+                    <div class="letter-divider">
+                        <span></span>
+                        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="#c9354c" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                        <span></span>
+                    </div>
+                    <div class="letter-text">诚邀挚友共聚良辰</div>
+                    <div class="letter-text small">点击信封 · 启封请柬</div>
+                </div>
+            </div>
+            <div class="envelope-front"></div>
+            <div class="envelope-flap"></div>
+            <div class="envelope-seal">
+                <span>囍</span>
+            </div>
+        </div>
+        <div class="cover-hint">
+            <div class="finger">👆</div>
+            <p>轻触开启</p>
+        </div>
+    </section>
+
+    <!-- 主内容 -->
+    <main class="invitation" id="invitation">
+
+        <!-- 第一屏：标题 -->
+        <section class="screen hero" data-screen>
+            <div class="ornament-top">
+                <div class="ornament-line"></div>
+                <div class="ornament-icon">❀</div>
+                <div class="ornament-line"></div>
+            </div>
+            <div class="hero-eyebrow reveal">Engagement Invitation</div>
+            <h1 class="hero-title">
+                <span class="char-anim">订</span>
+                <span class="char-anim">婚</span>
+                <span class="char-anim">喜</span>
+                <span class="char-anim">宴</span>
+            </h1>
+            <div class="hero-double-happy">
+                <div class="double-happy-bg"></div>
+                <div class="double-happy">囍</div>
+            </div>
+            <p class="hero-couple reveal">
+                <span class="name-groom">__________</span>
+                <span class="amp">&amp;</span>
+                <span class="name-bride">__________</span>
+            </p>
+            <p class="hero-sub reveal">恭候您的莅临 · 共证此刻</p>
+            <div class="ornament-bottom">
+                <div class="ornament-line"></div>
+                <div class="ornament-icon">❀</div>
+                <div class="ornament-line"></div>
+            </div>
+            <div class="scroll-hint">
+                <p>下滑查看</p>
+                <div class="chevrons">
+                    <span class="chev"></span>
+                    <span class="chev"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第二屏：邀请词 -->
+        <section class="screen letter-screen" data-screen>
+            <div class="letter-card reveal">
+                <div class="card-corner tl"></div>
+                <div class="card-corner tr"></div>
+                <div class="card-corner bl"></div>
+                <div class="card-corner br"></div>
+                <h2 class="letter-h">谨 致 挚 友</h2>
+                <p class="letter-line reveal">谨择吉日 · 共结连理</p>
+                <p class="letter-paragraph reveal">
+                    时光不语，<br>
+                    悄然将我们带至此刻。<br>
+                    今执子之手，<br>
+                    谨以此柬，<br>
+                    诚邀您见证我们的幸福时刻。
+                </p>
+                <p class="letter-sign reveal">
+                    <span class="name-groom">__________</span>
+                    <span class="amp-small">敬上</span>
+                    <span class="name-bride">__________</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- 第三屏：时间地点 -->
+        <section class="screen info-screen" data-screen>
+            <div class="info-eyebrow reveal">Save the Date</div>
+            <h2 class="info-title reveal">良辰吉日</h2>
+
+            <div class="date-card reveal">
+                <div class="date-year">二〇二六</div>
+                <div class="date-main">
+                    <div class="date-month">
+                        <div class="cn">陆月</div>
+                        <div class="en">JUNE</div>
+                    </div>
+                    <div class="date-day">
+                        <div class="num" id="dateDay">06</div>
+                    </div>
+                    <div class="date-week">
+                        <div class="cn">星期六</div>
+                        <div class="en">SAT</div>
+                    </div>
+                </div>
+                <div class="date-time">恭候 11 : 28　婚宴 12 : 18</div>
+            </div>
+
+            <!-- 倒计时 -->
+            <div class="countdown reveal">
+                <div class="cd-title">距 喜 宴 还 有</div>
+                <div class="cd-grid">
+                    <div class="cd-item"><div class="cd-num" id="cdDay">--</div><div class="cd-label">天</div></div>
+                    <div class="cd-item"><div class="cd-num" id="cdHour">--</div><div class="cd-label">时</div></div>
+                    <div class="cd-item"><div class="cd-num" id="cdMin">--</div><div class="cd-label">分</div></div>
+                    <div class="cd-item"><div class="cd-num" id="cdSec">--</div><div class="cd-label">秒</div></div>
+                </div>
+            </div>
+
+            <!-- 地点 -->
+            <div class="place-card reveal">
+                <div class="place-icon">
+                    <svg viewBox="0 0 24 24" width="32" height="32"><path fill="#c9354c" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+                </div>
+                <div class="place-label">宴会地址</div>
+                <div class="place-name">__________ 大酒店</div>
+                <div class="place-addr">__________________________</div>
+                <div class="place-floor">__ 楼 · __ 厅</div>
+                <button class="place-btn" id="copyAddrBtn">复制地址</button>
+            </div>
+        </section>
+
+        <!-- 结尾 -->
+        <section class="screen ending" data-screen>
+            <div class="ending-double-happy">囍</div>
+            <p class="ending-text reveal">
+                <span class="name-groom">__________</span>
+                <span class="amp">&amp;</span>
+                <span class="name-bride">__________</span>
+            </p>
+            <p class="ending-sub reveal">谨此邀请 · 不胜感激</p>
+            <div class="ending-line"></div>
+            <p class="ending-foot reveal">2026 · 喜结良缘</p>
+        </section>
+
+    </main>
+
+    <!-- 提示 -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
