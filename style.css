@@ -23,17 +23,40 @@ html, body {
     overflow-x: hidden;
     font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "STKaiti", "KaiTi", serif;
     color: var(--ink);
-    background: var(--cream);
+    background: #4a0a12;
     -webkit-font-smoothing: antialiased;
 }
 
 body {
-    background:
-        radial-gradient(circle at 20% 10%, rgba(232, 90, 115, 0.12), transparent 40%),
-        radial-gradient(circle at 80% 90%, rgba(212, 168, 90, 0.12), transparent 40%),
-        linear-gradient(180deg, #fdf6ec 0%, #fbeede 100%);
     min-height: 100vh;
     position: relative;
+    background-color: #3d0810;
+    background-image:
+        radial-gradient(ellipse 130% 70% at 50% -15%, rgba(255, 248, 230, 0.95), transparent 52%),
+        radial-gradient(ellipse 90% 55% at 0% 40%, rgba(255, 59, 48, 0.14), transparent 48%),
+        radial-gradient(ellipse 90% 55% at 100% 60%, rgba(255, 59, 48, 0.14), transparent 48%),
+        radial-gradient(ellipse 100% 45% at 50% 105%, rgba(201, 53, 76, 0.28), transparent 55%),
+        radial-gradient(circle at 50% 50%, rgba(255, 215, 160, 0.08), transparent 55%),
+        linear-gradient(168deg, #fff9f2 0%, #ffece6 38%, #ffd4d4 72%, #ffb8b8 100%);
+}
+
+/* 喜庆氛围：柔光缓慢浮动 */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 12% 18%, rgba(255, 210, 120, 0.22), transparent 32%),
+        radial-gradient(circle at 88% 22%, rgba(255, 180, 140, 0.18), transparent 30%),
+        radial-gradient(circle at 50% 88%, rgba(255, 200, 100, 0.12), transparent 40%);
+    animation: festiveGlow 10s ease-in-out infinite alternate;
+}
+
+@keyframes festiveGlow {
+    0% { opacity: 0.65; transform: scale(1) translateY(0); }
+    100% { opacity: 1; transform: scale(1.06) translateY(-1%); }
 }
 
 /* ============= 花瓣动画 ============= */
@@ -50,9 +73,9 @@ body {
     top: -30px;
     width: 14px;
     height: 14px;
-    background: radial-gradient(circle at 30% 30%, #ffb6c1, #e85a73);
+    background: radial-gradient(circle at 30% 30%, #ffd4a8, #ff6b6b 55%, #c41e3a);
     border-radius: 150% 0 150% 0;
-    opacity: 0.85;
+    opacity: 0.88;
     animation: fall linear infinite;
     will-change: transform;
 }
@@ -61,7 +84,7 @@ body {
     content: '';
     position: absolute;
     inset: 2px;
-    background: radial-gradient(circle at 30% 30%, #ffd0d8, #e85a73);
+    background: radial-gradient(circle at 30% 30%, #ffe8c8, #ff8a8a 60%, #c9354c);
     border-radius: 150% 0 150% 0;
 }
 
@@ -87,7 +110,9 @@ body {
     align-items: center;
     justify-content: center;
     background:
-        radial-gradient(circle at 50% 30%, #f5d6cb, #e8a99e 60%, #c9354c 130%);
+        radial-gradient(ellipse 85% 55% at 50% 18%, rgba(255, 236, 200, 0.55), transparent 58%),
+        radial-gradient(circle at 50% 115%, rgba(60, 8, 18, 0.45), transparent 52%),
+        radial-gradient(circle at 50% 30%, #ffd4c8, #e85a73 52%, #9e1a32 88%, #4a0610 130%);
     transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
